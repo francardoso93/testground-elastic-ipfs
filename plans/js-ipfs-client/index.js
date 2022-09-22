@@ -21,6 +21,7 @@ async function bitswap(runenv) {
   await bitswapClient(multiaddr, cidsfile)
 }
 
+// This is just for checking  parameter object properties and outbound internet access
 async function http(runenv, context) {
   console.log('******')
   console.log(runenv)
@@ -41,14 +42,3 @@ async function http(runenv, context) {
   // });
 }
 
-// TODO: Just for docker run test:
-const runenv = {
-  runParams: {
-    testInstanceParams: {
-      multiaddr:
-        '/dns4/elastic-dev.dag.house/tcp/443/wss/p2p/bafzbeia6mfzohhrwcvr3eaebk3gjqdwsidtfxhpnuwwxlpbwcx5z7sepei',
-      cidsfile: 'cids',
-    },
-  },
-}
-bitswap(runenv)
