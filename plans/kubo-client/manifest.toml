@@ -1,0 +1,28 @@
+name = "kubo-client"
+[defaults]
+builder = "exec:go"
+runner = "local:exec"
+
+[builders."docker:go"]
+enabled = true
+go_version = "1.16"
+module_path = "github.com/francardoso93/tesground-elastic-ipfs/plans/kubo-client"
+exec_pkg = "."
+
+[builders."exec:go"]
+enabled = true
+go_version = "1.16"
+module_path = "github.com/francardoso93/tesground-elastic-ipfs/plans/kubo-client"
+
+[runners."local:docker"]
+enabled = true
+
+[runners."local:exec"]
+enabled = true
+
+[runners."cluster:k8s"]
+enabled = true
+
+[[testcases]]
+name= "kubo"
+instances = { min = 1, max = 5, default = 1 }

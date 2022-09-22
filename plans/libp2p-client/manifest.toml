@@ -1,0 +1,45 @@
+name = "quickstart"
+[defaults]
+builder = "exec:go"
+runner = "local:exec"
+
+[builders."docker:go"]
+enabled = true
+go_version = "1.14"
+module_path = "github.com/your/module/name"
+exec_pkg = "."
+
+[builders."exec:go"]
+enabled = true
+module_path = "github.com/your/module/name"
+
+[runners."local:docker"]
+enabled = true
+
+[runners."local:exec"]
+enabled = true
+
+[runners."cluster:k8s"]
+enabled = true
+
+[[testcases]]
+name= "libp2p"
+instances = { min = 1, max = 5, default = 1 }
+
+[[testcases]]
+name = "smallbrain"
+instances = { min = 1, max = 200, default = 1 }
+
+  [testcases.params]
+  word = { type = "string", default = "never" }
+  num = { type = "int", default = 2 }
+  feature = { type = "bool", default = false }
+
+[[testcases]]
+name = "bigbrain"
+instances = { min = 1, max = 200, default = 1 }
+
+  [testcases.params]
+  word = { type = "string", default = "always" }
+  num = { type = "int", default = 10000000 }
+  feature = { type = "bool", default = false }

@@ -1,0 +1,2 @@
+- Doesn't require IPFS daemon.
+- Testground daemon needs to start from this folder to get the correct go version.
