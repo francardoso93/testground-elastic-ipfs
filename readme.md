@@ -25,7 +25,7 @@ testground plan import --from plans/js-ipfs-client
 ```
 
 ``` sh 
-testground run single --plan js-ipfs-client \            
+testground run single --plan js-ipfs-client \
                       --testcase bitswap \
                       --builder docker:node \
                       --runner local:docker \
