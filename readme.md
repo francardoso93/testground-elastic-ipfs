@@ -29,7 +29,7 @@ testground run single --plan js-ipfs-client \
                       --testcase bitswap \
                       --builder docker:node \
                       --runner local:docker \
-                      --instances 1 --test-param multiaddr=$MULTIADDR`
+                      --instances 1 --test-param multiaddr=$MULTIADDR
 ```
 
 Learn more about Testground in [official docs](https://docs.testground.ai/).
